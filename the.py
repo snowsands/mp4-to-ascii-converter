@@ -112,16 +112,18 @@ def extract_prompt():
 
 
 def existing_txts():
-    if os.path.exists('asciitxtfiles'):
-        if len(os.listdir('asciitxtfiles')) == 0:
-            return
-        else:
-            while (True):
-                existing = input('there are existing videos that you could play. would you like to play them? y/n ')
-                if existing == 'y':
-                    break
-                elif existing == 'n':
-                    return
+    if not os.path.exists('asciitxtfiles'):
+        os.makedirs('asciitxtfiles')
+        
+    if len(os.listdir('asciitxtfiles')) == 0:
+        return
+    else:
+        while (True):
+            existing = input('there are existing videos that you could play. would you like to play them? y/n ')
+            if existing == 'y':
+                break
+            elif existing == 'n':
+                return
     
     txts = []
     for txt_name in os.listdir('asciitxtfiles'):
@@ -155,4 +157,5 @@ def run():
     
 print(input('Ready to start? '))
 run()
+
 
