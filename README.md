@@ -1,5 +1,5 @@
 made this in september
 
-Command line tool you can use to render an MP4 file in real-time ASCII art in a Tkinter window.
+command line tool you can use to render an mp4 file in real-time ascii art in a tkinter window.
 
-Uses OpenCV for video and image processing.
+uses opencv for video and image processing.
