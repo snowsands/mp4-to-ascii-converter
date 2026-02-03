@@ -36,8 +36,6 @@ def extract_convert(video_name):
             img_array = convert(frame, video_frame, grayscale_map, factor, height, width)
             
             ascii_input = ""
-            # .join() function:
-            # joins a list of strings and glues them together w/ a given separator
             for row in img_array:
                 ascii_input += ''.join(row) + '\\n'
             asc.append(ascii_input)
@@ -71,9 +69,8 @@ def convert(frame, video_frame, grayscale_map, factor, height, width):
     return img_array
              
         
-# root.after() function:
-# runs after a delay -> inputs: delay in ms, function to run, and then args for the called function
-# im doing 8 fps so every 125 ms
+
+# doing 8 fps so every 125 ms
 def display(video_name):
     
     root = tk.Tk()
@@ -92,7 +89,7 @@ def display(video_name):
         if i < len(asc): # keeps looping until window is closed
             print(f'displaying frame {i}')
             text_widget.delete('1.0', tk.END)
-            text_widget.insert(tk.END, asc[i]) # .replace('\\n', '\n') 
+            text_widget.insert(tk.END, asc[i])
             # do 83 for 12 fps on a 60 fps source video
             root.after(83, update_frame, i + 1)
         else:
@@ -157,5 +154,6 @@ def run():
     
 print(input('Ready to start? '))
 run()
+
 
 
