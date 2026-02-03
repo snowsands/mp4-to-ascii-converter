@@ -1,3 +1,5 @@
 made this in september
 
-converts an mp4 video to a txt file of ascii characters that can be played as a video using cv2
+Command line tool you can use to render an MP4 file in real-time ASCII art in a Tkinter window.
+
+Uses OpenCV for video and image processing.
